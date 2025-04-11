@@ -9,6 +9,10 @@ from rich import print
 from transformers import AutoProcessor
 from transformers import Qwen2_5_VLForConditionalGeneration
 
+if torch.cuda.is_available():
+    print("GPU is Used!")
+else:
+    print("CPU is Used!")
 
 class ImageDescription(BaseModel):
     """
