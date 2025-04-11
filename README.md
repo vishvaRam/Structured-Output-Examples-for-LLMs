@@ -10,6 +10,7 @@ This repository demonstrates structured data extraction using various language m
 - **[`OllamaLLM.py`](OllamaLLM.py)**: Single-prompt processing with LangChain's OllamaLLM.
 - **[`chatOllama.py`](chatOllama.py)**: Chat-based structured output using LangChain's ChatOllama.
 - **[`Outliner_for_transformers.py`](Outliner_for_transformers.py)**: Utilizes the Outlines library for JSON generation with transformer models.
+- **[`Outliner_for_transformers_vision.py`](Outliner_for_transformers_vision.py)**: Utilizes the Outlines library for JSON generation with transformer vision models (Note: This Outlines transformers_vision will only work on pytorch version 2.4, I tried 2.6 it was not working.).
 
 ## Key Features
 - Structured JSON output using Pydantic schemas.
