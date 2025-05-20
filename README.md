@@ -4,6 +4,7 @@ This repository demonstrates structured data extraction using various language m
 
 ## Files Overview
 - **[`Groq_Langchain.py`](Groq_Langchain.py)**: Uses the langchain Groq library for guided decoding with Pydantic JSON schema.
+- **[`Gemini_Langchain.py`](Gemini_Langchain.py)**: Uses the langchain Gemini library for guided decoding with Pydantic JSON schema.
 - **[`vLLM.py`](vLLM.py)**: Uses the vLLM library for guided decoding with JSON schema.
 - **[`vLLM_openai_client.py`](vLLM.py)**: Uses the vLLM's Openai client library to access vLLM server for guided decoding with JSON schema.
 - **[`ollama.py`](ollama.py)**: Implements structured output using the Ollama chat API.
