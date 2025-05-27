@@ -14,7 +14,7 @@ if torch.cuda.is_available():
 else:
     print("CPU is Used!")
 
-model_path = "./sarvam-m-q8_0.llama_cpp"
+model_path = "./Meta-Llama-3.1-8B-Instruct-GGUF"
 
 # Initialize the GGUF model
 llm = Llama(
