@@ -1,21 +1,91 @@
 # Structured Output with Language Models
 
-This repository demonstrates structured data extraction using various language models and frameworks. It includes examples of generating JSON outputs for name and age extraction from text prompts. The project leverages models like Qwen and frameworks such as LangChain, vLLM, and Outlines.
+A comprehensive collection of examples demonstrating structured data extraction and JSON output generation using various language models and frameworks. This repository showcases different approaches to ensure LLMs return well-formatted, schema-compliant responses.
 
-## Files Overview
-- **[`Groq_Langchain.py`](Groq_Langchain.py)**: Uses the langchain Groq library for guided decoding with Pydantic JSON schema.
-- **[`Gemini_langchain.py`](Gemini_langchain.py)**: Uses the langchain Gemini library for guided decoding with Pydantic JSON schema.
-- **[`vLLM.py`](vLLM.py)**: Uses the vLLM library for guided decoding with JSON schema.
-- **[`vLLM_openai_client.py`](vLLM.py)**: Uses the vLLM's Openai client library to access vLLM server for guided decoding with JSON schema.
-- **[`ollama.py`](ollama.py)**: Implements structured output using the Ollama chat API.
-- **[`OllamaLLM_Batch_Processing.py`](OllamaLLM_Batch_Processing.py)**: Batch processes prompts with LangChain's OllamaLLM and Pydantic parsers.
-- **[`OllamaLLM.py`](OllamaLLM.py)**: Single-prompt processing with LangChain's OllamaLLM.
-- **[`chatOllama.py`](chatOllama.py)**: Chat-based structured output using LangChain's ChatOllama.
-- **[`Outliner_for_transformers.py`](Outliner_for_transformers.py)**: Utilizes the Outlines library for JSON generation with transformer models.
-- **[`Outliner_for_transformers_vision.py`](Outliner_for_transformers_vision.py)**: Utilizes the Outlines library for JSON generation with transformer vision models (Note: This Outlines transformers_vision will only work on pytorch version 2.4, I tried 2.6 it was not working.)
-- **[`Outliner_for_transformers_vision_batch.py`](Outliner_for_transformers_vision_batch.py)**: Utilizes the Outlines library for JSON generation with transformer vision models in batches.
+## 🚀 Features
+
+- **Multiple Framework Support**: Examples for LangChain, vLLM, Outlines, Ollama, and more
+- **Pydantic Integration**: Type-safe structured outputs with validation
+- **Batch Processing**: Efficient handling of multiple prompts
+- **Vision Model Support**: Structured outputs from multimodal models
+- **Flexible Backends**: Support for local models, API services, and GGUF formats
+
+
+## 📁 File Structure
+
+### API-Based Solutions
+| File | Description | Framework |
+|------|-------------|-----------|
+| [`Groq_Langchain.py`](Groq_Langchain.py) | Groq API integration with LangChain | LangChain + Groq |
+| [`Gemini_langchain.py`](Gemini_langchain.py) | Google Gemini API with guided decoding | LangChain + Gemini |
+
+### Local Model Solutions
+| File | Description | Framework |
+|------|-------------|-----------|
+| [`vLLM.py`](vLLM.py) | Local vLLM server with JSON schema validation | vLLM |
+| [`vLLM_openai_client.py`](vLLM_openai_client.py) | vLLM server via OpenAI-compatible client | vLLM + OpenAI Client |
+
+### Ollama Integration
+| File | Description | Use Case |
+|------|-------------|----------|
+| [`ollama.py`](ollama.py) | Direct Ollama chat API usage | Simple structured outputs |
+| [`OllamaLLM.py`](OllamaLLM.py) | Single prompt processing | Individual requests |
+| [`OllamaLLM_Batch_Processing.py`](OllamaLLM_Batch_Processing.py) | Batch processing with Pydantic validation | High-throughput scenarios |
+| [`chatOllama.py`](chatOllama.py) | Chat-based interface | Conversational structured outputs |
+
+### Outlines Library
+| File | Description | Model Type |
+|------|-------------|------------|
+| [`Outlines_for_transformers.py`](Outlines_for_transformers.py) | Transformer models with JSON generation | HuggingFace Transformers |
+| [`Outlines_for_GGUF.py`](Outlines_for_GGUF.py) | GGUF models via llama_cpp backend | Quantized models |
+| [`Outlines_for_transformers_vision.py`](Outlines_for_transformers_vision.py) | Vision-language models | Multimodal inputs |
+| [`Outlines_for_transformers_vision_batch.py`](Outlines_for_transformers_vision_batch.py) | Batch vision processing | High-volume multimodal |
+
+## 🔧 Quick Start
+
+### Basic Name and Age Extraction
+
+```python
+from pydantic import BaseModel
+from typing import Optional
+
+class PersonInfo(BaseModel):
+    name: str
+    age: Optional[int] = None
+    
+# Use any of the provided scripts with this schema
+```
+
+## ⚠️ Important Notes
+
+- **Vision Models**: `Outlines_for_transformers_vision.py` requires PyTorch 2.4 specifically
+- **GGUF Models**: Ensure llama_cpp is properly installed for GGUF examples
+- **API Keys**: Set appropriate environment variables for Groq and Gemini examples
+
+## 🎯 Use Cases
+
+- **Data Extraction**: Extract structured information from unstructured text
+- **API Responses**: Ensure consistent JSON responses from LLMs
+- **Batch Processing**: Process large datasets with structured outputs
+- **Multimodal Analysis**: Extract structured data from images and text
+- **Validation**: Type-safe outputs with automatic validation
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to:
+- Add examples for new frameworks
+- Improve existing implementations
+- Add error handling and edge cases
+- Enhance documentation
+
+## 📄 License
+
+This project is open source. Please check individual dependencies for their licensing terms.
+
+## 🔗 Related Resources
+
+- [LangChain Documentation](https://python.langchain.com/)
+- [Outlines Library](https://github.com/outlines-dev/outlines)
+- [vLLM Documentation](https://docs.vllm.ai/)
+- [Pydantic Documentation](https://docs.pydantic.dev/)
   
-## Key Features
-- Structured JSON output using Pydantic schemas.
-- Integration with multiple LLM frameworks.
-- Examples for both single and batch processing.
