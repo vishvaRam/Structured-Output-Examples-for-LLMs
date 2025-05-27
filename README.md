@@ -30,6 +30,7 @@ A comprehensive collection of examples demonstrating structured data extraction 
 |------|-------------|----------|
 | [`ollama.py`](ollama.py) | Direct Ollama chat API usage | Simple structured outputs |
 | [`OllamaLLM.py`](OllamaLLM.py) | Single prompt processing | Individual requests |
+| [`OllamaLLM_MultiModel.py`](OllamaLLM_MultiModel.py) | MultiModel with structured outputs | Individual requests with Image |
 | [`OllamaLLM_Batch_Processing.py`](OllamaLLM_Batch_Processing.py) | Batch processing with Pydantic validation | High-throughput scenarios |
 | [`chatOllama.py`](chatOllama.py) | Chat-based interface | Conversational structured outputs |
 
