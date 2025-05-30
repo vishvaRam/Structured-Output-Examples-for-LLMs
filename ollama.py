@@ -20,3 +20,5 @@ response = chat(
     model='minicpm-v',
     format=ResponseFormat.model_json_schema(),
 )
+
+print(response.message.content)
