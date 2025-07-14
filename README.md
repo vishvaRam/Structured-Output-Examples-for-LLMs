@@ -4,7 +4,7 @@ A comprehensive collection of examples demonstrating structured data extraction 
 
 ## 🚀 Features
 
-- **Multiple Framework Support**: Examples for LangChain, vLLM, Outlines, Ollama, and more
+- **Multiple Framework Support**: Examples for LangChain, vLLM, Outlines, Ollama,OpenAI and more
 - **Pydantic Integration**: Type-safe structured outputs with validation
 - **Batch Processing**: Efficient handling of multiple prompts
 - **Vision Model Support**: Structured outputs from multimodal models
@@ -18,6 +18,8 @@ A comprehensive collection of examples demonstrating structured data extraction 
 |------|-------------|-----------|
 | [`Groq_Langchain.py`](Groq_Langchain.py) | Groq API integration with LangChain | LangChain + Groq |
 | [`Gemini_langchain.py`](Gemini_langchain.py) | Google Gemini API with guided decoding | LangChain + Gemini |
+| [`OpenAI_langchain.py`](OpenAI_Langchain.py) | OpenAI API with guided decoding | LangChain + OpenAI |
+| [`OpenAI_API.py`](OpenAI_API.py) | Use OpenAI API Lib for guided decoding | OpenAI Lib + Gemini + Groq + Local + etc |
 
 ### Local Model Solutions
 | File | Description | Framework |
