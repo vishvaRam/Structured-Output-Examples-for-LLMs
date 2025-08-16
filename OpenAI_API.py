@@ -28,21 +28,24 @@ client = OpenAI(
 
 # For Local
 client = OpenAI(
-    base_url="http://192.9.200.28:9898/v1",
+    base_url="http://192.9.200.29:8585/v1",
     api_key="not-needed"
 )
 
 input_text="Harry was a chubby brown beagle who loved chicken"
 
-response = client.chat.completions.create(
+response = client.chat.completions.parse(
         model="gpt-3.5-turbo",  #  Not necessary of not using openAI
         messages=[
             {"role": "system", "content": "You are a world-class algorithm for extracting information in structured formats. Extract the relevant information about a dog from the user's input."},
             {"role": "user", "content": input_text}
         ],
-        response_model=Dog,  # Specify the Pydantic model for structured output
+        response_format=Dog,  # Specify the Pydantic model for structured output
         temperature=0.1,
         max_tokens=512,
     )
 
-print(response)
+print(response.choices[0].message.parsed)
+
+# output
+# name='Harry' color='brown' fav_food='chicken'
