@@ -28,7 +28,7 @@ client = OpenAI(
 
 # For Local
 client = OpenAI(
-    base_url="http://192.9.200.29:8585/v1",
+    base_url="http://ollama/v1",
     api_key="not-needed"
 )
 
